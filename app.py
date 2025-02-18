@@ -54,14 +54,7 @@ if file is not None:
     
     # Display the dataframe
     st.dataframe(df)
-'''
-st.download_button(
-    label="Download Text File", 
-    data='text_content', 
-    file_name="sample_text_file.txt", 
-    mime="text/plain"
-)
-'''
+
 file_path = "D:\Python\Project_Creta\test.txt"
 
 # Read the content of the local file
