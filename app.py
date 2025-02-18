@@ -61,9 +61,9 @@ with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.txt') as temp_
         temp_file.write('test')
         temp_file_path = temp_file.name  # Get the path to the temporary file
 
-    # Now offer the user the download button
-    with open(temp_file_path, "r") as file:
-        file_content = file.read()
+# Now offer the user the download button
+with open(temp_file_path, "r") as file:
+    file_content = file.read()
 
 # Create the download button
 st.download_button(
