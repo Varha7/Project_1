@@ -50,7 +50,7 @@ file = st.file_uploader("Pick a csv file", type=["csv"])
 
 if file is not None:
     # Read the Excel file into a pandas DataFrame
-    df = pd.read_excel(file)
+    df = pd.read_csv(file)
     
     # Display the dataframe
     st.dataframe(df)
