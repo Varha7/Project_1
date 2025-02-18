@@ -1,5 +1,6 @@
 # app.py
 import streamlit as st
+import pandas as pd
 
 # Simple function for chatbot logic (can be replaced with more complex logic)
 def chatbot_response(user_input):
