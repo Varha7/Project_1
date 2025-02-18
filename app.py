@@ -45,7 +45,7 @@ if st.button("Clear Chat"):
     st.session_state['messages'] = []
     st.experimental_rerun()
 
-file = st.file_uploader("Pick a PDF file", type=["pdf"])
+file = st.file_uploader("Pick a csv file", type=["csv"])
 
 if file is not None:
     # Read the Excel file into a pandas DataFrame
