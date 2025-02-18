@@ -1,6 +1,7 @@
 # app.py
 import streamlit as st
 import pandas as pd
+import tempfile
 
 # Simple function for chatbot logic (can be replaced with more complex logic)
 def chatbot_response(user_input):
@@ -55,11 +56,14 @@ if file is not None:
     # Display the dataframe
     st.dataframe(df)
 
-file_path = "D:\Python\Project_Creta\test.txt"
+with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.txt') as temp_file:
+        # Write the user's input to the temporary file
+        temp_file.write('test')
+        temp_file_path = temp_file.name  # Get the path to the temporary file
 
-# Read the content of the local file
-with open(file_path, "r") as file:
-    file_content = file.read()
+    # Now offer the user the download button
+    with open(temp_file_path, "r") as file:
+        file_content = file.read()
 
 # Create the download button
 st.download_button(
