@@ -54,13 +54,26 @@ if file is not None:
     
     # Display the dataframe
     st.dataframe(df)
-
+'''
 st.download_button(
     label="Download Text File", 
     data='text_content', 
     file_name="sample_text_file.txt", 
     mime="text/plain"
 )
+'''
+file_path = "D:\Python\Project_Creta\test.txt"
 
+# Read the content of the local file
+with open(file_path, "r") as file:
+    file_content = file.read()
+
+# Create the download button
+st.download_button(
+    label="Download Local Text File",  # Button label
+    data=file_content,  # File content to be downloaded
+    file_name="downloaded_file.txt",  # Name of the downloaded file
+    mime="text/plain"  # MIME type for a text file
+)
 
 #py -m streamlit run  "D:\Python\Project_Creta\app.py" --server.address 192.168.29.150 --server.port 8502
